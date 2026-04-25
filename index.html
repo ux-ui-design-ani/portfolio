@@ -472,11 +472,13 @@ allCards.forEach((card, index) => {
     const isMobile = window.innerWidth <= 768;
 
     // 👉 карточка "обо мне"
-    if (index === 1) {
+   if (index === 1) {
   e.preventDefault();
 
   const aboutSection = document.getElementById('about');
-  const offset = 100;
+  const isMobile = window.innerWidth <= 768;
+
+  const offset = isMobile ? 20 : 100;
 
   const top = aboutSection.getBoundingClientRect().top + window.scrollY - offset;
 
@@ -773,7 +775,9 @@ const aboutSection = document.getElementById('about');
 aboutLink.addEventListener('click', (e) => {
   e.preventDefault();
 
-  const offset = 100;
+  const isMobile = window.innerWidth <= 768;
+
+  const offset = isMobile ? 20 : 100;
 
   const top = aboutSection.getBoundingClientRect().top + window.scrollY - offset;
 
@@ -788,7 +792,11 @@ const contactsSection = document.getElementById('contacts');
 contactsLink.addEventListener('click', (e) => {
   e.preventDefault();
 
-  const offset = 60;
+  const isMobile = window.innerWidth <= 768;
+
+  const offset = isMobile ? 20 : 100; 
+  // мобилка почти без отступа
+  // десктоп — под хедер
 
   const top = contactsSection.getBoundingClientRect().top + window.scrollY - offset;
 
