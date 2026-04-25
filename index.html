@@ -174,7 +174,9 @@
     </a>
 
     <a href="#" class="card">
-      <img src="https://s13.gifyu.com/images/bqG3e.gif" alt="">
+  <video autoplay muted loop playsinline>
+    <source src="https://res.cloudinary.com/dcjlxlaiv/video/upload/v1777148816/PYUPUPU0001-0120_vg85tn.mp4" type="video/mp4">
+  </video>
       <div class="card-overlay">
         <span>смотреть 3D motion video</span>
         <div class="arrow">
@@ -185,7 +187,10 @@
     </a>
 
     <a href="#" class="card">
-      <img src="https://s13.gifyu.com/images/bqG3P.gif" alt="">
+  <video autoplay muted loop playsinline>
+    <source src="https://res.cloudinary.com/dcjlxlaiv/video/upload/v1777146051/pap0001-0050_d8xkbi.mp4" type="video/mp4">
+  </video>
+
       <div class="card-overlay">
         <span>смотреть 3D motion video</span>
         <div class="arrow">
@@ -296,8 +301,10 @@
         </div>
       </a>
 
-      <a href="#" class="latest-card">
-        <img src="https://s13.gifyu.com/images/bqG3P.gif">
+          <a href="#" class="latest-card">
+  <video autoplay muted loop playsinline>
+    <source src="https://res.cloudinary.com/dcjlxlaiv/video/upload/v1777146051/pap0001-0050_d8xkbi.mp4" type="video/mp4">
+  </video>
         <div class="latest-overlay">
           <span>смотреть 3D motion video</span>
           <div class="arrow">
@@ -394,6 +401,7 @@
     <img class="modal-image">
 
   </div>
+ <video class="modal-video" autoplay loop muted playsinline></video>
 
   <!-- 🔥 слайдер -->
   <div class="modal-slider"></div>
@@ -477,7 +485,7 @@ allCards.forEach((card, index) => {
     top: top,
     behavior: 'smooth'
   });
-
+openMediaInModal(card);
   return;
 }
 
@@ -565,14 +573,28 @@ allCards.forEach((card, index) => {
 
         currentIndex = 0;
         updateSlider();
-      } else {
-        slider.style.display = "none";
-        modalImg.style.display = "block";
+     } else {
+  slider.style.display = "none";
 
-        const img = card.querySelector('img').src;
-        modalImg.src = img;
-      }
+  const media = card.querySelector('video, img');
+  const modalVideo = document.querySelector('.modal-video');
 
+  // скрываем всё
+  modalImg.style.display = "none";
+  modalVideo.style.display = "none";
+
+  if (media.tagName === "VIDEO") {
+    const source = media.querySelector('source').src;
+
+    modalVideo.src = source;
+    modalVideo.style.display = "block";
+    modalVideo.play();
+
+  } else {
+    modalImg.src = media.src;
+    modalImg.style.display = "block";
+  }
+}
       modal.classList.add('active');
       showHint();
     }
@@ -581,6 +603,33 @@ allCards.forEach((card, index) => {
 });
 const hintOverlay = document.querySelector('.modal-hint-overlay');
 const hintIcon = document.querySelector('.hint-icon');
+
+
+function openMediaInModal(card) {
+  const media = card.querySelector('video, img');
+  const modalVideo = document.querySelector('.modal-video');
+
+  // скрываем всё
+  modalImg.style.display = "none";
+  slider.style.display = "none";
+  modalVideo.style.display = "none";
+
+  if (media.tagName === "VIDEO") {
+    const source = media.querySelector('source').src;
+
+    modalVideo.src = source;
+    modalVideo.style.display = "block";
+    modalVideo.play();
+
+  } else {
+    modalImg.src = media.src;
+    modalImg.style.display = "block";
+  }
+
+  modal.classList.add('active');
+  showHint();
+}
+
 
 function showHint() {
   // 👉 меняем иконку
@@ -622,8 +671,11 @@ function updateSlider() {
 
 modal.addEventListener('click', () => {
   modal.classList.remove('active');
-});
 
+  const modalVideo = document.querySelector('.modal-video');
+  modalVideo.pause();
+  modalVideo.src = "";
+});
 
 const scrollBtn = document.querySelector('.hero-btn');
 
@@ -677,51 +729,34 @@ slider.addEventListener('touchend', () => {
 });
 const latestCards = document.querySelectorAll('.latest-card');
 
-const latestDesktopOnly = [1]; // кресло
+const latestDesktopOnly = [1]; // если нужно
 
 latestCards.forEach((card, index) => {
   card.addEventListener('click', (e) => {
+    e.preventDefault();
 
     const isMobile = window.innerWidth <= 768;
 
-    // 👉 desktop only карточка
+    // 👉 если только desktop
     if (latestDesktopOnly.includes(index)) {
-
       if (isMobile) {
-        e.preventDefault();
-
-        // reset
         modalImg.style.display = "none";
         slider.style.display = "none";
-        document.querySelector('.modal-message').style.display = "none";
-
-        // показать текст
         document.querySelector('.modal-message').style.display = "flex";
 
         modal.classList.add('active');
-      } else {
-        window.open("https://figma.com/your-project", '_blank');
+        return;
       }
-
-      return;
     }
 
-    // 👉 обычные карточки (если нужны)
-    e.preventDefault();
-
+    // 👉 универсальное открытие (И ВОТ ЭТО ГЛАВНОЕ)
     document.querySelector('.modal-message').style.display = "none";
-
-    slider.style.display = "none";
-    modalImg.style.display = "block";
-
-    const img = card.querySelector('img').src;
-    modalImg.src = img;
-
-    modal.classList.add('active');
-    showHint();
-
+    openMediaInModal(card);
   });
 });
+
+
+
 const bg2 = document.querySelector('.bg-2');
 const works = document.querySelector('.works');
 
@@ -782,3 +817,4 @@ projectButtons.forEach(btn => {
 </script>
 </body>
 </html>
+
