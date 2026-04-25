@@ -794,9 +794,8 @@ contactsLink.addEventListener('click', (e) => {
 
   const isMobile = window.innerWidth <= 768;
 
-  const offset = isMobile ? 20 : 100; 
-  // мобилка почти без отступа
-  // десктоп — под хедер
+  const offset = isMobile ? -80 : -120; 
+  // 🔥 отрицательное значение = скроллит ниже
 
   const top = contactsSection.getBoundingClientRect().top + window.scrollY - offset;
 
