@@ -798,20 +798,17 @@ filter: grayscale(100%);
   width: auto;
   height: auto;
 }
-.modal-video {
-  width: auto !important;
-  height: auto !important;
-}
+
 .modal-video {
   display: none;
 
-  max-width: 90vw;   /* 🔥 ограничение по ширине */
-  max-height: 85vh;  /* 🔥 ограничение по высоте */
-
-  width: auto;
+  width: 100%;
   height: auto;
 
+  max-height: 90vh;
+
   object-fit: contain;
+
 }
 .modal-close {
   position: absolute; /* ❗ вместо fixed */
