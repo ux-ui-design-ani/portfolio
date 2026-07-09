@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <meta charset="UTF-8">
-  <title>Мой сайт</title>
-  <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="ru">
 
-  <meta property="og:title" content="Анна Черных — UX/UI дизайнер">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Анна Черных — Creative Digital Designer</title>
+
+<link rel="stylesheet" href="./css/style.css">
+
+<meta property="og:title" content="Анна Черных — Creative Digital Designer">
 <meta property="og:description" content="UX/UI, 3D и брендинг цифровых продуктов">
 <meta property="og:image" content="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777154524/image_21_iexin1.jpg">
 <meta property="og:url" content="https://ux-ui-design-ani.github.io/portfolio/">
 <meta property="og:type" content="website">
-<body>
-<div class="bg"></div>
+
 </head>
+
+<body>
+   <video class="bg-video"
+  autoplay muted loop playsinline preload="auto">
+  <source src="https://res.cloudinary.com/dcjlxlaiv/video/upload/v1783632473/pap10001-0050_fplyan.mp4">
+</video>
+  
+<div class="loader" id="loader">
+
+    <div class="loader-vignette"></div>
+
+    <div class="loader-progress-wrap">
+
+        <div class="loader-progress"></div>
+
+    </div>
+
+</div>
+<div id="page">
+<div class="bg"></div>
   <!-- HEADER -->
   <header class="header">
   <div class="header-container">
 
    <div class="logo" id="logoScroll">
-      <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135605/logo_orqhss.svg" alt="logo">
+      <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1783627013/Vector_8_byzsho.svg" alt="logo">
       <span>портфолио</span>
     </div>
 
@@ -74,7 +100,7 @@
  <a href="#" class="card">
       <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135607/%D0%B1%D1%83%D0%BB%D0%BA%D0%B8_ug1tcs.jpg" alt="">
       <div class="card-overlay">
-        <span>перейти в проект (desktop)</span>
+       <span>перейти на сайт</span>
         <div class="arrow">
           <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135604/arrow_hdo4tn.svg" alt="">
           <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135604/arrow_hdo4tn.svg" alt="" class="second">
@@ -166,16 +192,21 @@
       </div>
     </a>
 
-    <a href="#" class="card">
-      <img src="https://s13.gifyu.com/images/bqG9L.png" alt="">
-      <div class="card-overlay">
-        <span>смотреть 3D модели</span>
-        <div class="arrow">
-          <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135604/arrow_hdo4tn.svg" alt="">
-          <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135604/arrow_hdo4tn.svg" alt="" class="second">
-        </div>
-      </div>
-    </a>
+ <a href="#" class="card">
+  <video autoplay muted loop playsinline>
+    <source src="https://res.cloudinary.com/dcjlxlaiv/video/upload/v1783615142/organ0001-0300_kvhymi.mp4" type="video/mp4">
+  </video>
+
+  <div class="card-overlay">
+    <span>смотреть 3D motion video</span>
+
+    <div class="arrow">
+      <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135604/arrow_hdo4tn.svg" alt="">
+      <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135604/arrow_hdo4tn.svg" alt="" class="second">
+    </div>
+
+  </div>
+</a>
 
     <a href="#" class="card">
   <video autoplay muted loop playsinline>
@@ -207,10 +238,7 @@
   </div>
 </section>
 
- <video class="bg-video" autoplay muted loop playsinline>
-  <source src="https://res.cloudinary.com/dcjlxlaiv/video/upload/v1777146051/pap0001-0050_d8xkbi.mp4" type="video/mp4">
-</video>
-  
+
   <!-- SECTION 2 (about) -->
 <section class="about" id="about">
 
@@ -422,413 +450,8 @@
 </div>
   </div>
 </div>
-<script>
-const modal = document.getElementById('modal');
-const modalImg = document.querySelector('.modal-image');
-const slider = document.querySelector('.modal-slider');
-document.addEventListener('click', (e) => {
-
-});
-const overlay = document.querySelector('.modal-overlay');
-const desktopOnlyCards = [0, 2, 3, 5]; // 1,3,4,6 (индексы с 0)
-const modalCards = [7, 9, 10, 11];     // 8,10,11,12
-const allCards = document.querySelectorAll('.grid .card');
-
-const splatImages = [
-  "https://s13.gifyu.com/images/bqG9L.png",
-  "https://s13.gifyu.com/images/bqG9x.png",
-  "https://s13.gifyu.com/images/bqG9N.png"
-];
-
-let currentIndex = 0;
-
-// 👉 ОТКРЫТИЕ ВСЕХ КАРТОЧЕК
-     const links = {
-  0: {
-    desktop: "https://www.figma.com/proto/aNk82TmbWRkNP9cesz4C9d/%E2%80%9CBakery-symphony%E2%80%9D?node-id=1-106&viewport=872%2C40%2C0.23&t=uHichdEHyWXNjWzc-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
-  },
-
-  2: {
-    desktop: "https://www.figma.com/proto/EYcNWFNqnxhJ0APQWmLhMF/%D1%81%D1%82%D1%83%D0%B4%D0%B8%D1%8F-%D1%84%D0%BE%D1%80%D0%BC?node-id=1-144&viewport=470%2C188%2C0.1&t=SyO4RaVbs98bhh1U-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A144&page-id=0%3A1"
-  },
-
-  3: {
-    desktop: "https://www.figma.com/proto/iQh4DZPoIeXilyMmQ0Crj0/insurance?node-id=1-2593&viewport=40%2C144%2C0.19&t=GQP5dbyuCiNR6uMe-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A2593&page-id=0%3A1"
-  },
-4: {
-  desktop: "https://fully-calm-73039026.figma.site/home",
-  mobile: "https://fully-calm-73039026.figma.site/home"
-},
-  5: {
-    desktop: "https://www.figma.com/proto/r2ssJecFsFbeLnqOYfKSrS/Lumi%C3%A8re1?node-id=1-821&viewport=40%2C353%2C0.08&t=mQUcwyUXcawD32Bo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A821&page-id=0%3A1"
-  },
-
-  6: {
-    desktop: "https://www.figma.com/proto/58FZnfBrmm4Ud5zpnuxXWH/%D0%BD%D1%84%D1%82-dekstop?node-id=0-49&viewport=40%2C52%2C0.54&t=uFIN6jrqIsB7x6m6-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
-    mobile: "https://www.figma.com/proto/XByM4k3wqCGaznVKVQpIEN/%D0%BD%D1%84%D1%82-mobile?node-id=0-988&viewport=230%2C40%2C0.78&t=L7LDGVP3lAHz4aur-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
-  },
-
-  8: {
-    desktop: "https://www.figma.com/proto/HcdH3cYaplAO6T1jBUzXB2/%D0%B2%D0%B0%D0%B7%D1%8B-dekstop?node-id=0-882&viewport=304%2C483%2C0.1&t=lHflbOR0Auuiotlc-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=0%3A882&page-id=0%3A1",
-    mobile: "https://www.figma.com/proto/rzTi0i4KBDAcTll5PbHgLv/%D0%B2%D0%B0%D0%B7%D1%8B-mobile?node-id=0-928&viewport=328%2C223%2C0.33&t=3Yxb0KsC0QZEttan-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=0%3A928&page-id=0%3A1"
-  }
-};
-
-allCards.forEach((card, index) => {
-  card.addEventListener('click', (e) => {
-
-    const isMobile = window.innerWidth <= 768;
-
-    // 👉 карточка "обо мне"
-   if (index === 1) {
-  e.preventDefault();
-
-  const aboutSection = document.getElementById('about');
-  const isMobile = window.innerWidth <= 768;
-
-  const offset = isMobile ? 20 : 100;
-
-  const top = aboutSection.getBoundingClientRect().top + window.scrollY - offset;
-
-  window.scrollTo({
-    top: top,
-    behavior: 'smooth'
-  });
-
-  return;
-}
-
-    // 👉 если есть ссылка
-    if (links[index]) {
-      e.preventDefault();
-
-      const link = links[index];
-
-      // 🔥 если только desktop
-      if (!link.mobile && isMobile) {
-        modalImg.style.display = "none";
-        slider.style.display = "none";
-        document.querySelector('.modal-message').style.display = "flex";
-
-        modal.classList.add('active');
-        return;
-      }
-
-      const url = isMobile 
-        ? link.mobile 
-        : link.desktop;
-
-      window.open(url, '_blank');
-      return;
-    }
-
-    // 👉 МОДАЛКА (как было)
-    if (modalCards.includes(index)) {
-      e.preventDefault();
-
-      document.querySelector('.modal-message').style.display = "none";
-
-      if (index === 9) {
-        modalImg.style.display = "none";
-        slider.style.display = "block";
-
-        slider.innerHTML = "";
-
-        splatImages.forEach((src, i) => {
-          const div = document.createElement('div');
-          div.classList.add('modal-slide');
-
-          if (i === 0) div.classList.add('active');
-
-          div.innerHTML = `
-            <div class="slide-inner">
-
-              <button class="modal-nav left">
-                <div class="arrow left">
-                  <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135610/%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%B0_e62yoh.svg">
-                  <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135610/%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%B0_e62yoh.svg" class="second">
-                </div>
-              </button>
-
-              <img src="${src}">
-
-              <button class="modal-nav right">
-                <div class="arrow right">
-                  <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135610/%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%B0_e62yoh.svg">
-                  <img src="https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135610/%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%B0_e62yoh.svg" class="second">
-                </div>
-              </button>
-
-            </div>
-          `;
-
-          const prevBtn = div.querySelector('.modal-nav.left');
-          const nextBtn = div.querySelector('.modal-nav.right');
-
-          prevBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            currentIndex = (currentIndex - 1 + splatImages.length) % splatImages.length;
-            updateSlider();
-          });
-
-          nextBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            currentIndex = (currentIndex + 1) % splatImages.length;
-            updateSlider();
-          });
-
-          slider.appendChild(div);
-        });
-
-        currentIndex = 0;
-        updateSlider();
-     } else {
-  slider.style.display = "none";
-
-  const media = card.querySelector('video, img');
-  const modalVideo = document.querySelector('.modal-video');
-
-  // скрываем всё
-  modalImg.style.display = "none";
-  modalVideo.style.display = "none";
-
-  if (media.tagName === "VIDEO") {
-    const source = media.querySelector('source').src;
-
-    modalVideo.src = source;
-    modalVideo.style.display = "block";
-    modalVideo.play();
-
-  } else {
-    modalImg.src = media.src;
-    modalImg.style.display = "block";
-  }
-}
-      modal.classList.add('active');
-      showHint();
-    }
-
-  });
-});
-const hintOverlay = document.querySelector('.modal-hint-overlay');
-const hintIcon = document.querySelector('.hint-icon');
-
-
-function openMediaInModal(card) {
-  const media = card.querySelector('video, img');
-  const modalVideo = document.querySelector('.modal-video');
-
-  // скрываем всё
-  modalImg.style.display = "none";
-  slider.style.display = "none";
-  modalVideo.style.display = "none";
-
-  if (media.tagName === "VIDEO") {
-    const source = media.querySelector('source').src;
-
-    modalVideo.src = source;
-    modalVideo.style.display = "block";
-    modalVideo.play();
-
-  } else {
-    modalImg.src = media.src;
-    modalImg.style.display = "block";
-  }
-
-  modal.classList.add('active');
-  showHint();
-}
-
-
-function showHint() {
-  // 👉 меняем иконку
-  if (window.innerWidth <= 768) {
-    hintIcon.src = "https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135604/hand_trc9jn.svg";
-  } else {
-    hintIcon.src = "https://res.cloudinary.com/dcjlxlaiv/image/upload/v1777135605/mouse_nq4c8j.svg";
-  }
-
-  // 👉 через 1 сек показываем
-  setTimeout(() => {
-    hintOverlay.classList.add('show');
-
-    // 👉 через 3 сек скрываем
-    setTimeout(() => {
-      hintOverlay.classList.remove('show');
-      hintOverlay.classList.add('hide');
-
-      setTimeout(() => {
-        hintOverlay.classList.remove('hide');
-      }, 500);
-
-    }, 3000);
-
-  }, 1000);
-}
-function updateSlider() {
-  const slides = document.querySelectorAll('.modal-slide');
-
-  slides.forEach((slide, i) => {
-    slide.classList.remove('active');
-
-    if (i === currentIndex) {
-      slide.classList.add('active');
-    }
-  });
-}
-
-
-modal.addEventListener('click', () => {
-  modal.classList.remove('active');
-
-  const modalVideo = document.querySelector('.modal-video');
-  modalVideo.pause();
-  modalVideo.src = "";
-});
-
-const scrollBtn = document.querySelector('.hero-btn');
-
-const logo = document.getElementById('logoScroll');
-
-logo.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-const worksLink = document.getElementById('worksLink');
-
-worksLink.addEventListener('click', (e) => {
-  e.preventDefault(); // ❗ чтобы не прыгал вверх
-
-  const offset = 100; // твой отступ (учёт хедера)
-
-  const top = worksSection.getBoundingClientRect().top + window.scrollY - offset;
-
-  window.scrollTo({
-    top: top,
-    behavior: 'smooth'
-  });
-});
-let startX = 0;
-let endX = 0;
-
-slider.addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX;
-});
-
-slider.addEventListener('touchmove', (e) => {
-  endX = e.touches[0].clientX;
-});
-
-slider.addEventListener('touchend', () => {
-  const diff = startX - endX;
-
-  // 👉 свайп влево
-  if (diff > 50) {
-    currentIndex = (currentIndex + 1) % splatImages.length;
-    updateSlider();
-  }
-
-  // 👉 свайп вправо
-  if (diff < -50) {
-    currentIndex = (currentIndex - 1 + splatImages.length) % splatImages.length;
-    updateSlider();
-  }
-});
-const latestCards = document.querySelectorAll('.latest-card');
-
-const latestDesktopOnly = [1]; // если нужно
-
-latestCards.forEach((card, index) => {
-  card.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const isMobile = window.innerWidth <= 768;
-
-    // 👉 если только desktop
-    if (latestDesktopOnly.includes(index)) {
-      if (isMobile) {
-        modalImg.style.display = "none";
-        slider.style.display = "none";
-        document.querySelector('.modal-message').style.display = "flex";
-
-        modal.classList.add('active');
-        return;
-      }
-    }
-
-    // 👉 универсальное открытие (И ВОТ ЭТО ГЛАВНОЕ)
-    document.querySelector('.modal-message').style.display = "none";
-    openMediaInModal(card);
-  });
-});
-
-
-
-const bg2 = document.querySelector('.bg-2');
-const works = document.querySelector('.works');
-
-window.addEventListener('scroll', () => {
-  const start = works.offsetTop + works.offsetHeight * 0.3;
-  const end = works.offsetTop + works.offsetHeight * 0.7;
-
-  const progress = (window.scrollY - start) / (end - start);
-
-  bg2.style.opacity = Math.min(Math.max(progress, 0), 1);
-});
-const aboutLink = document.getElementById('aboutLink');
-const aboutSection = document.getElementById('about');
-
-aboutLink.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  const isMobile = window.innerWidth <= 768;
-
-  const offset = isMobile ? 20 : 100;
-
-  const top = aboutSection.getBoundingClientRect().top + window.scrollY - offset;
-
-  window.scrollTo({
-    top: top,
-    behavior: 'smooth'
-  });
-});
-const contactsLink = document.getElementById('contactsLink');
-const contactsSection = document.getElementById('contacts');
-
-contactsLink.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  const isMobile = window.innerWidth <= 768;
-
-  const offset = isMobile ? -80 : -120; 
-  // 🔥 отрицательное значение = скроллит ниже
-
-  const top = contactsSection.getBoundingClientRect().top + window.scrollY - offset;
-
-  window.scrollTo({
-    top: top,
-    behavior: 'smooth'
-  });
-});
-const projectButtons = document.querySelectorAll('.hero-btn');
-const worksSection = document.getElementById('works');
-
-// кнопки
-projectButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const offset = 100;
-
-    const top = worksSection.getBoundingClientRect().top + window.scrollY - offset;
-
-    window.scrollTo({
-      top: top,
-      behavior: 'smooth'
-    });
-  });
-});
-</script>
+<script src="./js/main.js"></script>
+</div>
 </body>
 </html>
 
