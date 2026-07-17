@@ -123,9 +123,7 @@ url: "play-case-study.html"
       text: "Смотреть проект(desktop)",
     desktop: "https://www.figma.com/proto/EYcNWFNqnxhJ0APQWmLhMF/%D1%81%D1%82%D1%83%D0%B4%D0%B8%D1%8F-%D1%84%D0%BE%D1%80%D0%BC?node-id=1-144&viewport=470%2C188%2C0.1&t=SyO4RaVbs98bhh1U-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A144&page-id=0%3A1"
  },
-    {
-      
-    }
+    
   ]
   },
 
@@ -138,9 +136,7 @@ url: "play-case-study.html"
       text: "Смотреть проект(desktop)",
     desktop: "https://www.figma.com/proto/iQh4DZPoIeXilyMmQ0Crj0/insurance?node-id=1-2593&viewport=40%2C144%2C0.19&t=GQP5dbyuCiNR6uMe-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A2593&page-id=0%3A1"
   },
-    {
-     
-    }
+    
   ]
   },
 
@@ -152,9 +148,7 @@ url: "play-case-study.html"
       text: "Смотреть проект(desktop)",
     desktop: "https://www.figma.com/proto/r2ssJecFsFbeLnqOYfKSrS/Lumi%C3%A8re1?node-id=1-821&viewport=40%2C353%2C0.08&t=mQUcwyUXcawD32Bo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A821&page-id=0%3A1"
 },
-    {
     
-    }
   ]
   },
 
@@ -165,9 +159,7 @@ url: "play-case-study.html"
     desktop: "https://www.figma.com/proto/HcdH3cYaplAO6T1jBUzXB2/%D0%B2%D0%B0%D0%B7%D1%8B-dekstop?node-id=0-882&viewport=304%2C483%2C0.1&t=lHflbOR0Auuiotlc-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=0%3A882&page-id=0%3A1",
     mobile: "https://www.figma.com/proto/rzTi0i4KBDAcTll5PbHgLv/%D0%B2%D0%B0%D0%B7%D1%8B-mobile?node-id=0-928&viewport=328%2C223%2C0.33&t=3Yxb0KsC0QZEttan-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=0%3A928&page-id=0%3A1"
 },
-    {
-     
-    }
+   
   ]
   }
 };
